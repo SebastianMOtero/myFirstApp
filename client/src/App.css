@@ -1,0 +1,118 @@
+.App {
+  text-align: center;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* .App-logo {
+  height: 40vmin;
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+/* 
+.App-link {
+  color: #09d3ac;
+}
+
+.App-header {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; 
+  
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header img {
+  width: 30px;
+  margin: 10px 30px;
+}
+
+.App-main h3 {
+  margin: 50px 0px;
+  display: flex;
+  font-size: 18px;
+} */
+/* <div className="col-xs-12 col-sm-6"> */
+.Header-logo {
+  width: 95%;
+  margin: 5px;
+  display: flex;
+  max-width: 660px;
+}
+
+.Start-logo {
+  width: 25%;
+  align-content: center;
+}
+
+.Account-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.Home-logo {
+  width: 10%;
+  margin-top: 40px;
+}
+
+.center {
+  display: flex;  
+}
+
+.bloque {
+  background-color: red;
+  margin: 15px ;
+  width: 50px;
+  display: flex;
+}
+
+.bloque img {
+  width: 100%;
+  height: 100%;
+}
+.slick-slide div {
+  display: flex;
+}
+
+.UserIconNavBar {
+  height: 35px;
+}
+
+.App-footer {
+  flex-shrink: 0;
+}
+
+.App-content {
+  flex: 1 0 auto;
+}
+
+.App-NavBar {
+  flex-shrink: 0;
+}
+
+/* LANDING PAGE  */
+.HeaderLandingPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
