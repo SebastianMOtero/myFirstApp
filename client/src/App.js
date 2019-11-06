@@ -11,8 +11,14 @@ import LandingPage from './Components/LandingPage';
 import AppNavBar from './Components/AppNavBar';
 import Footer from './Components/Footer';
 
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+
 function App() {
   return (
+    <Provider store={store}>
     <Router>
             <div className="App">
                 <AppNavBar />
@@ -27,7 +33,8 @@ function App() {
                 </div>
                 <Footer />
             </div>
-        </Router>
+      </Router>
+      </Provider>
   );
 }
 

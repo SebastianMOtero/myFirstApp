@@ -116,3 +116,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.listCities li{
+  background-color: beige;
+  margin: 10px;
+  height: 10vh;
+}

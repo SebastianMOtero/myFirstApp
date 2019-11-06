@@ -6,9 +6,12 @@ import React from 'react'
 // }
 //const CITY_URL = "http://localhost:5000/api/cities/all"
 
-const CitiesList = ({cities}) => {
-  cities.map()
-}
+const CitiesList = ({cities}) =>
+cities.map(city => <li key={city.name}>{city.name}</li>)
+
+
+// cities.map(city => <li> {city} </li>)
+
 
 export default CitiesList
 
