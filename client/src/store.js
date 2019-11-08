@@ -7,8 +7,7 @@ const initialState = {};
 const middlewarre = [thunk];
 
 const store = createStore(
-    rootReducer, 
-    initialState, 
+    rootReducer,  
     compose(
         applyMiddleware(...middlewarre),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
