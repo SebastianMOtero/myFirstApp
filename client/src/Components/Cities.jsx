@@ -11,15 +11,34 @@ const CITY_URL = 'http://localhost:5000/api/cities/all'
 class Cities extends React.Component {
   constructor(props) {
       super(props);
-     
+      this.state = {
+        filteredCities: []
+      }
       // this.state = {
       //     arrayCities: this.cities
       // }
   }
 
+  filterCities = (e) => {
+    let filteredCities = this.props.cities; //recibo las
+    filteredCities = filteredCities.filter((city) => {
+      let cityName = city.name.toLowerCase() + city.country.toLowerCase()
+      return cityName.indexOf(
+        e.target.value.toLowerCase()) == 0
+    })
+    this.setState({
+      filteredCities: filteredCities
+    })
+  }
+
+
+
   async componentDidMount() {
       await this.props.getCities();
+      this.setState({ filteredCities: this.props.cities })
+      console.log("CITIES COMPONENT BLOQUE COMPONENT DID")
       console.log(this.props.cities);
+      console.log(this.state.filteredCities);
     //this.setState({...this.state})
     // fetch('http://localhost:5000/api/cities/all')
     //   .then(response => response.json())
@@ -34,21 +53,28 @@ class Cities extends React.Component {
   render() {
       return (
           <div>
-             
+            <label>Filter by city: </label>
+            <input type="text" id="filter" 
+              onChange={this.filterCities}/>
+
+             <ul className="listCities"><QueryCitiesList cities={this.state.filteredCities} name={"asd"} /></ul>
               <h1>asd</h1>
+              
           </div>
       );
   }
 }
 
-Cities.propTypes = {  
-  getCities: propTypes.func.isRequired,
-  cities: propTypes.object.isRequired  //representa el estado
-}
+// Cities.propTypes = {  
+//   getCities: propTypes.func.isRequired,
+//   cities: propTypes.object.isRequired  //representa el estado
+// }
 
 const mapStateToProps = state => {
+  console.log(state);
+  
   return {
-      cities: state.city.cities
+      cities: state.city.cities  
   }
 }
 

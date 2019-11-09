@@ -1,17 +1,21 @@
-import { GET_CITIES } from './types';
+import { GET_CITIES, CITIES_LOADING } from './types';
 
 const getCities = () => async (dispatch, getState) => {
     const response = await fetch('http://localhost:5000/api/cities/all')
-                        .then(res => console.log(res.json()))
-                        .catch(err=>console.log(err));
+                        .then(res => res.json());
                         //catch
-    await dispatch({
-        type: "GET_CITIES",
+    console.log(response);
+    dispatch({
+        type: GET_CITIES,
         payload: response
     })
-    console.log(dispatch)
-};
-
+    console.log("LLEGUE HASTA EL DISPATCH");
+    console.log(dispatch.payload);
+}
 export default getCities;
 
-
+// export const  setCityLoading = () => {
+//     return {
+//         type: CITIES_LOADING
+//     }
+// }

@@ -6,8 +6,12 @@ import React from 'react'
 // }
 //const CITY_URL = "http://localhost:5000/api/cities/all"
 
-const CitiesList = ({cities}) =>
-cities.map(city => <li key={city.name}>{city.name}</li>)
+const CitiesList = (props) =>{
+    console.log(props)
+    return props.cities.map(city => <li key={city.name}>{city.name}</li>)
+}
+
+// props.cities.cities.map(city => <li key={city.name}>{city.name}</li>)
 
 
 // cities.map(city => <li> {city} </li>)
