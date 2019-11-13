@@ -1,5 +1,7 @@
 //recibe objetos de ciudades y retorna LI de los objetos
 import React from 'react'
+import { ListGroup, ListGroupItem } from 'reactstrap';
+import Itineraries from './Itineraries';
 
 // const CitiesList = ({ cities }) => {
 //     cities.map(city=> <li>{city}</li>)
@@ -8,8 +10,11 @@ import React from 'react'
 
 const CitiesList = (props) =>{
     console.log(props)
-    return props.cities.map(city => <li key={city.name}>{city.name}</li>)
+    return props.cities.map(city => <ListGroupItem tag="button"  action key={city.name}>{city.name}</ListGroupItem>)
 }
+
+
+
 
 // props.cities.cities.map(city => <li key={city.name}>{city.name}</li>)
 

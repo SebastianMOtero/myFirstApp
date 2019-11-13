@@ -4,9 +4,7 @@ import QueryCitiesList from './QueryCitiesList';
 import { connect } from 'react-redux';
 import  getCities  from '../actions/citiesActions';
 import propTypes from 'prop-types';
-
-const CITY_URL = 'http://localhost:5000/api/cities/all'
-//const cities = "1"
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class Cities extends React.Component {
   constructor(props) {
@@ -14,9 +12,6 @@ class Cities extends React.Component {
       this.state = {
         filteredCities: []
       }
-      // this.state = {
-      //     arrayCities: this.cities
-      // }
   }
 
   filterCities = (e) => {
@@ -57,7 +52,9 @@ class Cities extends React.Component {
             <input type="text" id="filter" 
               onChange={this.filterCities}/>
 
-             <ul className="listCities"><QueryCitiesList cities={this.state.filteredCities} name={"asd"} /></ul>
+             <ListGroup 
+                className="listCities"><QueryCitiesList cities={this.state.filteredCities} name={"asd"} />
+             </ListGroup>
               <h1>asd</h1>
               
           </div>
@@ -65,10 +62,10 @@ class Cities extends React.Component {
   }
 }
 
-// Cities.propTypes = {  
-//   getCities: propTypes.func.isRequired,
-//   cities: propTypes.object.isRequired  //representa el estado
-// }
+Cities.propTypes = {  
+  getCities: propTypes.func.isRequired,
+  cities: propTypes.object.isRequired  //representa el estado
+}
 
 const mapStateToProps = state => {
   console.log(state);
